@@ -1,0 +1,305 @@
+<?php
+
+/**
+ * @file aacu_blocks.module
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function levelup_blocks_block_info() {
+  $blocks['resource_links_front'] = array(
+    'info' => t('Resource Links - Front Page'),
+  );
+
+  $blocks['resource_links'] = array(
+    'info' => t('Resource Links'),
+  );
+
+  $blocks['welcome_block'] = array(
+    'info' => t('Welcome Block'),
+  );
+
+  $blocks['security_topics'] = array(
+    'info' => t('Security Topics'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function levelup_blocks_block_view($delta = '') {
+
+  switch ($delta) {
+
+    case 'resource_links_front':
+      $block['content'] = levelup_blocks_resource_links_front();
+      break;
+
+    case 'resource_links':
+      $block['content'] = levelup_blocks_resource_links();
+      break;
+
+    case 'welcome_block':
+      $block['content'] = '<div class="front-text col-md-12">LevelUp is a community-driven project designed to support individuals and groups providing digital security trainings and support worldwide. This website is the result of over a year of work by members of the digital security training community volunteering their time, energy, expertise, and input to create a shared repository of expertise and resources for their fellow trainers.</div> <br />';
+      break;
+
+    case 'security_topics':
+      $block['content'] = levelup_blocks_security_topics();
+      break;
+  }
+
+  return $block;
+}
+
+function levelup_blocks_resource_links_front() {
+
+  $first_menu = variable_get(resource1_menu);
+  $first_title = variable_get(resource1_title);
+  $second_menu = variable_get(resource2_menu);
+  $second_title = variable_get(resource2_title);
+  $third_menu = variable_get(resource3_menu);
+  $third_title = variable_get(resource3_title);
+  $fith_menu = variable_get(resource5_menu);
+  $fith_title = variable_get(resource5_title);
+  $sixth_menu = variable_get(resource6_menu);
+  $sixth_title = variable_get(resource6_title);
+
+
+  $trainer_menu = theme('links', array('links' => menu_navigation_links($first_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainers resource-dropdown'))));
+
+  $training_menu = theme('links', array('links' => menu_navigation_links($second_menu), 'attributes' => array('class'=> array('links', 'resources-for-leading-train resource-dropdown'))));
+
+  $trainingtrainers_menu = theme('links', array('links' => menu_navigation_links($third_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainingtrain resource-dropdown'))));
+
+  $the_fifth_menu = theme('links', array('links' => menu_navigation_links($fifth_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainingtrain resource-dropdown'))));
+
+  $the_sixth_menu = theme('links', array('links' => menu_navigation_links($sixth_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainingtrain resource-dropdown'))));
+
+  if (!empty($first_title)) {
+    $trainer_link = '<div class="link-wrap trainers"><a href="#" class="resource-link yellow-trans" ></a><a class="link-txt" href="#" data-toggle="collapse" data-target="#trainer-menu"><p>' . $first_title . '</p></a></div><div id="trainer-menu" class="collapse">' . $trainer_menu . '</div>';
+  } else {
+    $trainer_link = '';
+  }
+
+  if (!empty($second_title)) {
+    $training_link = '<div class="link-wrap trainings"><a href="#" class="resource-link blue-trans"></a><a class="link-txt" href="#" data-toggle="collapse" data-target="#training-menu"><p>' . $second_title . '</p></a></div><div id="training-menu" class="collapse">' . $training_menu . '</div>';
+  } else {
+    $training_link = '';
+  }
+
+  if (!empty($third_title)) {
+    $training_trainers_link = '<div class="link-wrap trainingtrainers"><a href="#" class="resource-link purple-trans"></a><a class="link-txt" href="#" data-toggle="collapse" data-target="#trainingtrainers"><p>' . $third_title . '</p></a></div><div id="trainingtrainers" class="collapse">' . $trainingtrainers_menu . '</div>';
+  } else {
+    $training_trainers_link = '';
+  }
+
+  if (!empty($fifth_title)) {
+    $fifth_link = '<div class="link-wrap trainingtrainers"><a href="#" class="resource-link purple-trans"></a><a class="link-txt" href="#" data-toggle="collapse" data-target="#trainingtrainers"><p>' . $fifth_title . '</p></a></div><div id="trainingtrainers" class="collapse">' . $the_fith_menu . '</div>';
+  } else {
+    $fifth_link = '';
+  }
+
+  if (!empty($sixth_title)) {
+    $sixth_link = '<div class="link-wrap trainingtrainers"><a href="#" class="resource-link purple-trans"></a><a class="link-txt" href="#" data-toggle="collapse" data-target="#trainingtrainers"><p>' . $sixth_title . '</p></a></div><div id="trainingtrainers" class="collapse">' . $the_sixth_menu . '</div>';
+  } else {
+    $sixth_link = '';
+  }
+
+  return '<div class="resource-links">' . $trainer_link . $training_link . $training_trainers_link . '</div>';
+}
+
+function levelup_blocks_resource_links() {
+
+  $first_menu = variable_get(resource1_menu);
+  $first_title = variable_get(resource1_title);
+  $second_menu = variable_get(resource2_menu);
+  $second_title = variable_get(resource2_title);
+  $third_menu = variable_get(resource3_menu);
+  $third_title = variable_get(resource3_title);
+  $fourth_menu = variable_get(resource4_menu);
+  $fourth_title = variable_get(resource4_title);
+  $fifth_menu = variable_get(resource5_menu);
+  $fifth_title = variable_get(resource5_title);
+  $sixth_menu = variable_get(resource6_menu);
+  $sixth_title = variable_get(resource6_title);
+
+  $trainer_menu = theme('links', array('links' => menu_navigation_links($first_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainers resource-dropdown'))));
+
+  $training_menu = theme('links', array('links' => menu_navigation_links($second_menu), 'attributes' => array('class'=> array('links', 'resources-for-leading-train resource-dropdown'))));
+
+  $trainingtrainers_menu = theme('links', array('links' => menu_navigation_links($third_menu), 'attributes' => array('class'=> array('links', 'resources-for-trainingtrain resource-dropdown'))));
+
+  $topics_menu = theme('links', array('links' => menu_navigation_links($fourth_menu), 'attributes' => array('class'=> array('links', 'resource-topics  resource-dropdown'))));
+
+  if (!empty($first_title)) {
+    $trainer_link = '<div class="link-wrap trainers"><a href="#" class="resource-link yellow-trans" data="' . $first_title . '"></a><a class="link-txt" href="#"><p>' . $first_title . '</p></a></div><div id="trainer-menu" >' . $trainer_menu . '</div>';
+  } else {
+    $trainer_link = '';
+  }
+
+  if (!empty($second_title)) {
+    $training_link = '<div class="link-wrap trainings"><a href="#" class="resource-link blue-trans" data="' . $second_title . '"></a><a class="link-txt" href="#"><p>' . $second_title . '</p></a></div><div id="training-menu">' . $training_menu . '</div>';
+  } else {
+    $training_link = '';
+  }
+
+  if (!empty($third_title)) {
+    $training_trainers_link = '<div class="link-wrap trainingtrainers"><a href="#" class="resource-link purple-trans" data="' . $third_title . '"></a><a class="link-txt" href="#"><p>' . $third_title . '</p></a></div><div id="trainingtrainers">' . $trainingtrainers_menu . '</div>';
+  } else {
+    $training_trainers_link = '';
+  }
+
+  if (!empty($fourth_title)) {
+  $topics_link = '<div class="link-wrap topics"><a href="#" class="resource-link pink-trans" data="Security Topics"></a><a class="link-txt" href="#"><p>' . $fourth_title . '</p></a></div><div id="topics-menu">' . $topics_menu . '</div>';
+  }
+
+if (!empty($fifth_title)) {
+  $fith_link = '<div class="link-wrap topics"><a href="#" class="resource-link pink-trans" data="Security Topics"></a><a class="link-txt" href="#"><p>' . $fith_title . '</p></a></div><div id="topics-menu">' . $fifth_menu . '</div>';
+} else {
+  $fifth_link = '';
+}
+
+if (!empty($sixth_title)) {
+  $sixth_link = '<div class="link-wrap topics"><a href="#" class="resource-link pink-trans" data="Security Topics"></a><a class="link-txt" href="#"><p>' . $sixth_title . '</p></a></div><div id="topics-menu">' . $sixth_menu . '</div>';
+  }
+  return '<div class="resource-links small-links">' . $trainer_link . $training_link . $training_trainers_link . $topics_link . $fifth_link . $sixth_link . '</div>';
+}
+
+function levelup_blocks_security_topics() {
+  $terms = taxonomy_get_tree(1);
+  $term_markup = '<h2 class="security-header">Jump to Security Topics</h2><ol class=security-terms" data-content="Jump to a security topic" data-trigger="manual" data-toggle="popover">';
+  foreach ($terms as $term) {
+    $termlink = l($term->name, 'tags/' . preg_replace('/[^a-zA-Z0-9]+/', '-', $term->name));
+    $term_markup .= '<li>' . $termlink . '</li>';
+  }
+  return $term_markup . '</ol>';
+}
+
+/**
+ * Implements hook_menu().
+ */
+function levelup_blocks_menu() {
+  $items = array();
+  $items['admin/config/resource-menu'] = array(
+    'title' => 'Resource Menu',
+    'description' => 'Settings for Resource Menu',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('levelup_blocks_settings_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form().
+ */
+function levelup_blocks_settings_form($variables) {
+
+  $form['description'] = array(
+    '#type' => 'item',
+    '#title' => t('Resource Menu'),
+    '#markup' => '<p>Populate title field, and select a menu to have each item appear. Leave title field empty to hide.</p>',
+  );
+
+  // First Resource.
+  $form['resource1_title'] = array(
+    '#title' => t('Resource Title'),
+    '#description' => t('Enter the title for the first item'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource1_title'),
+  );
+
+  $form['resource1_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource1_menu'),
+  );
+
+  // Second Resource.
+  $form['resource2_title'] = array(
+    '#title' => t('Resource Title'),
+    '#description' => t('Enter the title for the second item'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource2_title'),
+  );
+
+  $form['resource2_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource2_menu'),
+  );
+
+  // Third Resource.
+  $form['resource3_title'] = array(
+    '#title' => t('Resource Title'),
+    '#description' => t('Enter the title for the third item'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource3_title'),
+  );
+
+  $form['resource3_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource3_menu'),
+  );
+
+  // Topics Block.
+  $form['resource4_title'] = array(
+    '#title' => t('Topics Title'),
+    '#description' => t('Enter the title for the Topics Block.'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource4_title'),
+  );
+
+  $form['resource4_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource4_menu'),
+  );
+
+  // Here's some extras.
+  $form['resource5_title'] = array(
+    '#title' => t('Resource Title'),
+    '#description' => t('Enter the title for the Topics Block.'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource5_title'),
+  );
+
+  $form['resource5_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource5_menu'),
+  );
+
+  $form['resource6_title'] = array(
+    '#title' => t('Resource Title'),
+    '#description' => t('Enter the title for the Topics Block.'),
+    '#type' => 'textfield',
+    '#default_value' => variable_get('resource6_title'),
+  );
+
+  $form['resource6_menu'] = array(
+    '#title' => t('Resource Menu'),
+    '#description' => t('Select the menu associated with this resource'),
+    '#type' => 'select',
+    '#options' => menu_get_menus(),
+    '#default_value' => variable_get('resource6_menu'),
+  );
+
+
+  return system_settings_form($form);
+
+}

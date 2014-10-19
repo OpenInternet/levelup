@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Level Up All feature.
+ */
+
+include_once 'level_up_all.features.inc';
