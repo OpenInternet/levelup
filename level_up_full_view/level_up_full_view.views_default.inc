@@ -83,13 +83,6 @@ function level_up_full_view_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<?php print print_insert_link(); ?>
-ekfer';
-  $handler->display->display_options['header']['area']['format'] = 'php';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -292,8 +285,6 @@ ekfer';
     t('inputs'),
     t('All'),
     t('Page'),
-    t('<?php print print_insert_link(); ?>
-ekfer'),
     t('Activities & Discussions'),
     t('activity_discusssion'),
     t('Inputs'),

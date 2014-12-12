@@ -45,7 +45,8 @@ function level_up_full_view_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="/node/[node:nid]/full">Full version</a>
+      'value' => '<p><a href="/print/[node:url:path]/full">- Full Module w/ADIDS (print friendly)</a><br />
+<a href="/printpdf/[node:url:path]/full">- Full Module w/ADIDS (.pdf)</a></p>
 ',
       'format' => 'full_html',
     ),
