@@ -46,7 +46,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings-of-trainers:node/208',
+    'parent_identifier' => 'main-menu_:node/208',
   );
   // Exported menu link: main-menu_agenda-planning-guide:node/199
   $menu_links['main-menu_agenda-planning-guide:node/199'] = array(
@@ -64,7 +64,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings:node/206',
+    'parent_identifier' => 'main-menu_:node/206',
   );
   // Exported menu link: main-menu_best-practices:node/193
   $menu_links['main-menu_best-practices:node/193'] = array(
@@ -100,7 +100,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings-of-trainers:node/208',
+    'parent_identifier' => 'main-menu_:node/208',
   );
   // Exported menu link: main-menu_event-planning-guide:node/198
   $menu_links['main-menu_event-planning-guide:node/198'] = array(
@@ -118,7 +118,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings:node/206',
+    'parent_identifier' => 'main-menu_:node/206',
   );
   // Exported menu link: main-menu_events:admin
   $menu_links['main-menu_events:admin'] = array(
@@ -156,7 +156,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings:node/206',
+    'parent_identifier' => 'main-menu_:node/206',
   );
   // Exported menu link: main-menu_get-involved:node/192
   $menu_links['main-menu_get-involved:node/192'] = array(
@@ -315,7 +315,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings:node/206',
+    'parent_identifier' => 'main-menu_:node/206',
   );
   // Exported menu link: main-menu_training-topic-repos:node/200
   $menu_links['main-menu_training-topic-repos:node/200'] = array(
@@ -333,7 +333,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings:node/206',
+    'parent_identifier' => 'main-menu_:node/206',
   );
   // Exported menu link: main-menu_what-is-a-tot:node/203
   $menu_links['main-menu_what-is-a-tot:node/203'] = array(
@@ -351,7 +351,7 @@ function level_up_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'customized' => 0,
-    'parent_identifier' => 'main-menu_resources-for-leading-trainings-of-trainers:node/208',
+    'parent_identifier' => 'main-menu_:node/208',
   );
   // Exported menu link: main-menu_who-owns-this-stuff:node/191
   $menu_links['main-menu_who-owns-this-stuff:node/191'] = array(

@@ -103,20 +103,26 @@ function level_up_all_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_subtitle',
-        1 => 'field_page_image',
-        2 => 'field_image_caption',
-        3 => 'body',
-        4 => 'field_resource_type',
+        1 => 'body',
+        2 => 'links',
+        3 => 'field_page_image',
+        4 => 'field_image_caption',
+        5 => 'field_resource_type',
       ),
     ),
     'fields' => array(
       'field_subtitle' => 'ds_content',
+      'body' => 'ds_content',
+      'links' => 'ds_content',
       'field_page_image' => 'ds_content',
       'field_image_caption' => 'ds_content',
-      'body' => 'ds_content',
       'field_resource_type' => 'ds_content',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
       'ds_content' => 'div',
     ),
@@ -134,36 +140,31 @@ function level_up_all_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'topic';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'levelup_2col_ds';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'left' => array(
         0 => 'body',
-        1 => 'field_summary',
-        2 => 'field_discussion',
-        3 => 'field_input',
-        4 => 'field_deepening',
-        5 => 'field_synthesis',
-        6 => 'field_activity_reference',
-        7 => 'field_tags',
+        1 => 'field_resources',
       ),
     ),
     'fields' => array(
-      'body' => 'ds_content',
-      'field_summary' => 'ds_content',
-      'field_discussion' => 'ds_content',
-      'field_input' => 'ds_content',
-      'field_deepening' => 'ds_content',
-      'field_synthesis' => 'ds_content',
-      'field_activity_reference' => 'ds_content',
-      'field_tags' => 'ds_content',
+      'body' => 'left',
+      'field_resources' => 'left',
     ),
-    'classes' => array(),
-    'wrappers' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
   $export['node|topic|default'] = $ds_layout;
