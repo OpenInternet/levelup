@@ -54,5 +54,27 @@ function level_up_full_view_ds_custom_fields_info() {
   );
   $export['level_up_full_view_link'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'level_up_full_view_link_adids';
+  $ds_field->label = 'level_up_full_view_link_adids';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<p>
+<a href="/print/[node:nid]">- Export this page (.rtf)</a>
+<a href="/printpdf/[node:nid]">- Export this page (.pdf)</a>
+</p>
+',
+      'format' => 'full_html',
+    ),
+    'use_token' => 1,
+  );
+  $export['level_up_full_view_link_adids'] = $ds_field;
+
   return $export;
 }
